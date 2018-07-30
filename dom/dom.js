@@ -1,0 +1,1 @@
+export const Stick = require('./stick/stick');

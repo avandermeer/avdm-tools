@@ -1,0 +1,14 @@
+{
+  "name": "avdm-tools",
+  "version": "1.0.0",
+  "description": "avdm tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Albert van der Meer",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
