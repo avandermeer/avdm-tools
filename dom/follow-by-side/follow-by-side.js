@@ -17,6 +17,7 @@ module.exports = function(){
     //prepare style of movable
     this.movable.css({
       position: 'absolute',
+      opacity: '0',
     })
   }
 
@@ -24,13 +25,12 @@ module.exports = function(){
    * The update function
    */
   this.update = function(){
-    console.log($(this.followClass))
+    this.movable.css({
+      opacity: '1',
+    })
     let self = this;
     $(this.followClass).each(function(){
-      console.log(this);
-      console.log($(this).hasClass(self.activeClass.substring(1)));
       if($(this).hasClass(self.activeClass.substring(1))){
-        console.log("ha!!!")
 
         if(self.direction=='bottom'){
           self.moveToBottom($(this));
@@ -54,10 +54,8 @@ module.exports = function(){
    * @param moveToElement
    */
   this.moveToBottom = function(moveToElement){
-    console.log("to bottom", moveToElement)
     let xPos = this.calcX(moveToElement);
     let yPos = moveToElement.height() + moveToElement.offset().top;
-    console.log("ypos", yPos)
 
     this.movable.css({
       left: xPos,
@@ -147,6 +145,7 @@ module.exports = function(){
 
   }
 
+  $(window).resize(()=> this.update() );
 
 
 }
