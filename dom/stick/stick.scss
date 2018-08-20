@@ -1,18 +1,18 @@
 //stick to top
-.stick-to-top{
-	&.to-stick {
-		display: none;
-		&.sticked {
-			display: block;
-			position: fixed;
-			z-index: 999;
-			top: 0px;
-			left: 0px;
-	    right: 0px;
+.stick-to-top {
+  &.to-stick {
+    display: none;
+    &.sticked {
+      display: block;
+      position: fixed;
+      z-index: 999;
+      top: 0px;
+      left: 0px;
+      right: 0px;
 
-		}
-	}
-	&.sticked-hide {
+    }
+  }
+  &.sticked-hide {
     opacity: 0;
   }
 }
