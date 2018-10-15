@@ -9,6 +9,8 @@ module.exports = function() {
   this.direction; //bottom, top, left, right
   this.started = false;
 
+  this.interval;
+
   this.init = function(movableId, followClass, activeClass, direction) {
     this.movable = $(movableId);
     this.followClass = followClass;
@@ -34,7 +36,7 @@ module.exports = function() {
       this.movable.css({
         opacity: '1',
       });
-      window.setInterval(() => {
+      this.interval = window.setInterval(() => {
         this.watchOffsetOfParent();
       }, 100);
 
@@ -47,6 +49,11 @@ module.exports = function() {
 
 
   };
+
+  this.stop = function(){
+    clearInterval(this.interval);
+    console.log("stop");
+  }
 
   /**
    * The update function
